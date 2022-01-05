@@ -1,0 +1,2 @@
+﻿It's a really neat pattern used to make your life a bit easier. 
+It will be called by controller to use methods of Services and Mappers so Controller won't be able to access the data that easily.

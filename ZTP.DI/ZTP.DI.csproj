@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ZTP.Common\ZTP.Common.csproj" />
+    <ProjectReference Include="..\ZTP.EntityFramework\ZTP.EntityFramework.csproj" />
+    <ProjectReference Include="..\ZTP.Facades\ZTP.Facades.csproj" />
+    <ProjectReference Include="..\ZTP.Interfaces.Facades\ZTP.Interfaces.Facades.csproj" />
+    <ProjectReference Include="..\ZTP.Interfaces.Infrastructure\ZTP.Interfaces.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

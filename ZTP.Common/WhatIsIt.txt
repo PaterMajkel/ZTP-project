@@ -1,0 +1,2 @@
+﻿it's a library that is intended to hold Common elements in the project that will be shared around itself.
+DTO holds classes that will be used around the program that are ment to resemble Model classes.

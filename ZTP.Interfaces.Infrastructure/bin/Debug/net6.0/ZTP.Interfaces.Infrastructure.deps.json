@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ZTP.Interfaces.Infrastructure/1.0.0": {
+        "dependencies": {
+          "ZTP.Common": "1.0.0"
+        },
+        "runtime": {
+          "ZTP.Interfaces.Infrastructure.dll": {}
+        }
+      },
+      "ZTP.Common/1.0.0": {
+        "runtime": {
+          "ZTP.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ZTP.Interfaces.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ZTP.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

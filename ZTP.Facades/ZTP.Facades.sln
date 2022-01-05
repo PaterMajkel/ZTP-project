@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZTP.Facades", "ZTP.Facades.csproj", "{3FC2BFD6-EAEE-40F7-9834-291866A56FB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FC2BFD6-EAEE-40F7-9834-291866A56FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC2BFD6-EAEE-40F7-9834-291866A56FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC2BFD6-EAEE-40F7-9834-291866A56FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC2BFD6-EAEE-40F7-9834-291866A56FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14261082-DF8D-48DA-AD74-84B1F4691A37}
+	EndGlobalSection
+EndGlobal
