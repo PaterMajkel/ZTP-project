@@ -13,12 +13,9 @@ namespace ZTP.EntityFramework
         public EFDBMapperProfile()
         {
 
-            CreateMap<AppUser, AppUserDTO>().ReverseMap();
-            CreateMap<AppRole, RoleDTO>().ReverseMap();
-
-            CreateMap<UserInfo, UserInfoDTO>().ReverseMap();
-            CreateMap<Commission, CommissionDTO>().ReverseMap();
-
+            CreateMap<LevelDTO, Level>().ReverseMap();
+            CreateMap<ScoreBoard, ScoreBoardDTO>().ReverseMap();
+        
         }
     }
 }

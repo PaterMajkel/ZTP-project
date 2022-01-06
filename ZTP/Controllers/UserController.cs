@@ -10,37 +10,32 @@ using ZTP.Interfaces.Facades;
 namespace ZTP.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[GameController]")]
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
-        private readonly IUserFcd _userFcd;
+        private readonly IGameFcd _gameFcd;
 
         public UserController(ILogger<UserController> logger,
-            IUserFcd userFcd)
+            IGameFcd gameFcd)
         {
             _logger = logger;
-            _userFcd = userFcd;
+            _gameFcd = gameFcd;
         }
-        [HttpPost("RegisterUser")]
-        public async Task<ActionResult> Register(AppUserDTO user, string password)
+        [HttpGet("GetLevel")]
+       public LevelDTO GetLevel(int levelId)
         {
-            var result = await _userFcd.Register(user, password);
-            return (result.Success) ? Ok(result.Message) : NotFound(result.Message);
+            return _gameFcd.GetLevel(levelId);
         }
-
-        [HttpPost("LoginUser")]
-        public async Task<ActionResult> Login(string login, string password)
+        [HttpGet("GetAllLevels")]
+        public ICollection<LevelDTO> GetAllLevels()
         {
-            var result = await _userFcd.Login(login, password);
-            return (result.Success) ? Ok(result.Message) : NotFound(result.Message);
+            return _gameFcd.GetAllLevels();
         }
-
-        [HttpGet("GetUserProfileInfo")]
-        public async Task<ActionResult> GetUserProfileInfo(string id)
+        [HttpPost("PostScore")]
+        public void PostScore(ScoreBoardDTO scoreBoardDTO, int levelId)
         {
-            var data = await _userFcd.getUserInfo(id);
-            return (data != null) ? Ok(data) : NotFound("Nie udalo zdobyć danych");
+           _gameFcd.PostScore(scoreBoardDTO, levelId);
         }
     }
 }

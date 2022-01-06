@@ -20,24 +20,16 @@ namespace ZTP.DI
         public static void AddDependencies(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
             serviceCollection.AddDbContext<EFDbContext>(options =>
-                options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=\"F:\\STUDENT DEBIL SEM 5\\PROJEKTZESPOLOWY\\ZLECTO\\ZLECTO.ENTITYFRAMEWORK\\DATABASE\\ZLECTO.MDF\";Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")); 
+                options.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\ZTP project\\ZTP - project\\ZTP.EntityFramework\\DataBase\\ZTPdb.mdf\";Integrated Security=True")); 
             //configuration.GetConnectionString("ConnectionStrings: ZTPDB"
-
-            serviceCollection.AddIdentity<AppUser, AppRole>()
-                .AddEntityFrameworkStores<EFDbContext>()
-                .AddDefaultTokenProviders();
 
             // NuGet package service used for mapping db-objects to DTOs:
             serviceCollection.AddAutoMapper(typeof(EFDBMapperProfile));
 
 
             // User related services:
-            serviceCollection.AddScoped<IUserFcd, UserFcd>();
-            serviceCollection.AddScoped<IUserService, UserService>();
-
-            // Collection related services:
-            serviceCollection.AddScoped<ICommissionFcd, CommissionFcd>();
-            serviceCollection.AddScoped<ICommissionService, CommissionService>();
+            serviceCollection.AddScoped<IGameFcd, GameFcd>();
+            serviceCollection.AddScoped<IGameService, GameService>();
 
         }
     }

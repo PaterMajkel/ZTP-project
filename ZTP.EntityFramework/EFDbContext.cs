@@ -10,7 +10,7 @@ using ZTP.EntityFramework.Models;
 
 namespace ZTP.EntityFramework
 {
-    public class EFDbContext : IdentityDbContext<AppUser, AppRole, string>
+    public class EFDbContext : DbContext
     {
         public EFDbContext(DbContextOptions<EFDbContext> options) : base(options)
         {
@@ -18,27 +18,9 @@ namespace ZTP.EntityFramework
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            //Something is wrong here
-            modelBuilder.Entity<Commission>()
-                .HasOne(x => x.ComissionTaker)
-                .WithMany(x => x.Comissions).HasForeignKey(x => x.MakerId);
-
-            modelBuilder.Entity<Commission>()
-                .HasOne(x => x.ComissionTaker)
-                .WithMany(x => x.Comissions).HasForeignKey(x => x.TakerId);
-
-            modelBuilder.Entity<AppUser>()
-                .HasOne(x => x.UserInfo);
-
-
         }
-        public DbSet<UserInfo> UserInfos { get; set; }
-        public DbSet<Avatar> Avatars { get; set; }
-        public DbSet<Commission> Commissions { get; set; }
-        public DbSet<Offer> Offers { get; set; }
-
-
+        public DbSet<ScoreBoard> ScoreBoards { get; set; }
+        public DbSet<Level> Levels { get; set; }
 
     }
 }
