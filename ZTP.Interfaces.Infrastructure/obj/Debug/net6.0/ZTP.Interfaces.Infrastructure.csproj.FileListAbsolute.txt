@@ -28,3 +28,18 @@ F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Interfaces.Infrastructure\obj
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ref\ZTP.Interfaces.Infrastructure.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\bin\Debug\net6.0\ZTP.Interfaces.Infrastructure.deps.json
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\bin\Debug\net6.0\ZTP.Interfaces.Infrastructure.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\bin\Debug\net6.0\ref\ZTP.Interfaces.Infrastructure.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\bin\Debug\net6.0\ZTP.Interfaces.Infrastructure.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\bin\Debug\net6.0\ZTP.Common.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\bin\Debug\net6.0\ZTP.Common.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.csproj.AssemblyReference.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.AssemblyInfoInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.AssemblyInfo.cs
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.csproj.CoreCompileInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.csproj.CopyComplete
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ref\ZTP.Interfaces.Infrastructure.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Infrastructure\obj\Debug\net6.0\ZTP.Interfaces.Infrastructure.pdb

@@ -48,3 +48,28 @@ F:\student debil sem 5\ZTP project\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.dl
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.DI\obj\Debug\net6.0\ref\ZTP.DI.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.pdb
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.genruntimeconfig.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.DI.deps.json
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.DI.runtimeconfig.json
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.DI.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ref\ZTP.DI.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.DI.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.Common.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.EntityFramework.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.Facades.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.Interfaces.Facades.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.Interfaces.Infrastructure.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.Common.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.EntityFramework.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.Facades.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.Interfaces.Facades.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\bin\Debug\net6.0\ZTP.Interfaces.Infrastructure.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.csproj.AssemblyReference.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.GeneratedMSBuildEditorConfig.editorconfig
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.AssemblyInfoInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.AssemblyInfo.cs
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.csproj.CoreCompileInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.csproj.CopyComplete
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ref\ZTP.DI.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.DI\obj\Debug\net6.0\ZTP.DI.genruntimeconfig.cache

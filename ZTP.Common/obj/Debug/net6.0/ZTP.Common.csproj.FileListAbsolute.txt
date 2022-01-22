@@ -34,3 +34,15 @@ F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.C
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.Common.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Common\obj\Debug\net6.0\ref\ZTP.Common.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.Common.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\bin\Debug\net6.0\ZTP.Common.deps.json
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\bin\Debug\net6.0\ZTP.Common.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\bin\Debug\net6.0\ref\ZTP.Common.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\bin\Debug\net6.0\ZTP.Common.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.Common.csproj.AssemblyReference.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.Common.GeneratedMSBuildEditorConfig.editorconfig
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.Common.AssemblyInfoInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.Common.AssemblyInfo.cs
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.Common.csproj.CoreCompileInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.Common.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\obj\Debug\net6.0\ref\ZTP.Common.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Common\obj\Debug\net6.0\ZTP.Common.pdb

@@ -28,3 +28,18 @@ F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ref\ZTP.Interfaces.Facades.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\bin\Debug\net6.0\ZTP.Interfaces.Facades.deps.json
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\bin\Debug\net6.0\ZTP.Interfaces.Facades.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\bin\Debug\net6.0\ref\ZTP.Interfaces.Facades.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\bin\Debug\net6.0\ZTP.Interfaces.Facades.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\bin\Debug\net6.0\ZTP.Common.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\bin\Debug\net6.0\ZTP.Common.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.csproj.AssemblyReference.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.GeneratedMSBuildEditorConfig.editorconfig
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.AssemblyInfoInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.AssemblyInfo.cs
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.csproj.CoreCompileInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.csproj.CopyComplete
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ref\ZTP.Interfaces.Facades.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.Interfaces.Facades\obj\Debug\net6.0\ZTP.Interfaces.Facades.pdb

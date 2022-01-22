@@ -2862,24 +2862,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\micbo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.DI\\ZTP.DI.csproj",
+      "projectUniqueName": "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.DI\\ZTP.DI.csproj",
       "projectName": "ZTP.DI",
-      "projectPath": "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.DI\\ZTP.DI.csproj",
-      "packagesPath": "C:\\Users\\micbo\\.nuget\\packages\\",
-      "outputPath": "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.DI\\obj\\",
+      "projectPath": "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.DI\\ZTP.DI.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.DI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\micbo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2893,20 +2888,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.Common\\ZTP.Common.csproj": {
-              "projectPath": "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.Common\\ZTP.Common.csproj"
+            "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.Common\\ZTP.Common.csproj": {
+              "projectPath": "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.Common\\ZTP.Common.csproj"
             },
-            "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.EntityFramework\\ZTP.EntityFramework.csproj": {
-              "projectPath": "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.EntityFramework\\ZTP.EntityFramework.csproj"
+            "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.EntityFramework\\ZTP.EntityFramework.csproj": {
+              "projectPath": "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.EntityFramework\\ZTP.EntityFramework.csproj"
             },
-            "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.Facades\\ZTP.Facades.csproj": {
-              "projectPath": "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.Facades\\ZTP.Facades.csproj"
+            "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.Facades\\ZTP.Facades.csproj": {
+              "projectPath": "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.Facades\\ZTP.Facades.csproj"
             },
-            "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.Interfaces.Facades\\ZTP.Interfaces.Facades.csproj": {
-              "projectPath": "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.Interfaces.Facades\\ZTP.Interfaces.Facades.csproj"
+            "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.Interfaces.Facades\\ZTP.Interfaces.Facades.csproj": {
+              "projectPath": "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.Interfaces.Facades\\ZTP.Interfaces.Facades.csproj"
             },
-            "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.Interfaces.Infrastructure\\ZTP.Interfaces.Infrastructure.csproj": {
-              "projectPath": "F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.Interfaces.Infrastructure\\ZTP.Interfaces.Infrastructure.csproj"
+            "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.Interfaces.Infrastructure\\ZTP.Interfaces.Infrastructure.csproj": {
+              "projectPath": "I:\\Filip\\SEMESTR5\\Projekt\\ZTP-project\\ZTP.Interfaces.Infrastructure\\ZTP.Interfaces.Infrastructure.csproj"
             }
           }
         }
@@ -2955,7 +2950,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -36,3 +36,22 @@ F:\student debil sem 5\ZTP project\ZTP-project\ZTP.EntityFramework\obj\Debug\net
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ref\ZTP.EntityFramework.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.pdb
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.genruntimeconfig.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\bin\Debug\net6.0\ZTP.EntityFramework.deps.json
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\bin\Debug\net6.0\ZTP.EntityFramework.runtimeconfig.json
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\bin\Debug\net6.0\ZTP.EntityFramework.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\bin\Debug\net6.0\ref\ZTP.EntityFramework.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\bin\Debug\net6.0\ZTP.EntityFramework.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\bin\Debug\net6.0\ZTP.Common.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\bin\Debug\net6.0\ZTP.Interfaces.Infrastructure.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\bin\Debug\net6.0\ZTP.Common.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\bin\Debug\net6.0\ZTP.Interfaces.Infrastructure.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.csproj.AssemblyReference.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.GeneratedMSBuildEditorConfig.editorconfig
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.AssemblyInfoInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.AssemblyInfo.cs
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.csproj.CoreCompileInputs.cache
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.csproj.CopyComplete
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ref\ZTP.EntityFramework.dll
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.pdb
+I:\Filip\SEMESTR5\Projekt\ZTP-project\ZTP.EntityFramework\obj\Debug\net6.0\ZTP.EntityFramework.genruntimeconfig.cache
