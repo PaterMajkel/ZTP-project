@@ -10,13 +10,13 @@ using ZTP.Interfaces.Facades;
 namespace ZTP.Controllers
 {
     [ApiController]
-    [Route("[GameController]")]
-    public class UserController : ControllerBase
+    [Route("API/GameController")]
+    public class GameController : ControllerBase
     {
-        private readonly ILogger<UserController> _logger;
+        private readonly ILogger<GameController> _logger;
         private readonly IGameFcd _gameFcd;
 
-        public UserController(ILogger<UserController> logger,
+        public GameController(ILogger<GameController> logger,
             IGameFcd gameFcd)
         {
             _logger = logger;

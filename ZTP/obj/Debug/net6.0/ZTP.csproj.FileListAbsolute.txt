@@ -159,7 +159,6 @@ F:\student debil sem 5\ZTP project\ZTP-project\ZTP\obj\Debug\net6.0\ZTP.MvcAppli
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP\obj\Debug\net6.0\staticwebassets.build.json
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP\obj\Debug\net6.0\staticwebassets.development.json
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP\obj\Debug\net6.0\scopedcss\bundle\ZTP.styles.css
-F:\student debil sem 5\ZTP project\ZTP-project\ZTP\obj\Debug\net6.0\ZTP.csproj.CopyComplete
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP\obj\Debug\net6.0\ZTP.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP\obj\Debug\net6.0\ref\ZTP.dll
 F:\student debil sem 5\ZTP project\ZTP-project\ZTP\obj\Debug\net6.0\ZTP.pdb
