@@ -1,5 +1,5 @@
 import { PreloadAllModules } from "@angular/router"
-
+import { AssetType } from "../interface/assets";
 export class MainScene extends Phaser.Scene {
     constructor()
     {
