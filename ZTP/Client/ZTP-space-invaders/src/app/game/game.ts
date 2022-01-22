@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import { MainScene } from "./Main";
+import { MainScene } from "./scene/main";
 var config={
     type: Phaser.AUTO,
     width: 512,
@@ -14,5 +14,10 @@ var config={
         MainScene,
     ]
 };
+class SpaceInvadersGame extends Phaser.Game {
+    constructor(config: Phaser.Types.Core.GameConfig) {
+        super(config)
+    }
+}
 
-new Phaser.Game(config);
+const game = new SpaceInvadersGame(config);
