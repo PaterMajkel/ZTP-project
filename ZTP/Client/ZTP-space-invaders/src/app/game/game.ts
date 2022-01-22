@@ -1,14 +1,13 @@
-import * as Phaser from "phaser";
+import "phaser";
 import { MainScene } from "./scene/main";
 var config={
+    title: "Space Invaders",
+    backgroundColor: 'rgb(47,52,55)',
     type: Phaser.AUTO,
     width: 512,
     height: 512,
     physics:{
         default: 'arcade',
-        arcade:{
-            debug:true
-        }
     },
     scene:[
         MainScene,

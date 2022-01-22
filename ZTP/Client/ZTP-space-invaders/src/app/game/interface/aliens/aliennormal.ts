@@ -1,0 +1,4 @@
+class AlienNormal implements Alien 
+{
+    
+}

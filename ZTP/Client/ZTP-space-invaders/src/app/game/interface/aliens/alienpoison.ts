@@ -1,0 +1,4 @@
+class AlienPoison implements Alien 
+{
+    
+}

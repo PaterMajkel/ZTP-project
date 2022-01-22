@@ -1,0 +1,4 @@
+class AlienFire implements Alien 
+{
+    
+}
