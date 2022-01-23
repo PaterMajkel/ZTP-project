@@ -1,6 +1,11 @@
+import { Scene } from "phaser";
 import { AssetType } from "../assets";
-class AlienPoison implements Alien 
+class AlienPoison implements IAlien 
 {
-    constructor(scene: Phaser.Scene, x: number, y: number) {
+  constructor(scene: Phaser.Scene, x: number, y: number) {
+  }
+      createEnemy(): IAlien {
+          return new AlienPoison(new Phaser.Scene.arguments,10, 10);
       }
+
 }
