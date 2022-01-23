@@ -68,7 +68,9 @@ ScaffoldingReadMe.txt
 # StyleCop
 StyleCopReport.xml
 
+#Folders
 */obj/*
+*bin/*
 
 # Files built by Visual Studio
 *_i.c
@@ -101,6 +103,7 @@ StyleCopReport.xml
 *.scc
 *.mdf
 *.ldf
+*.suo
 
 # Chutzpah Test files
 _Chutzpah*
