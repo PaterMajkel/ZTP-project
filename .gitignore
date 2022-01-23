@@ -71,6 +71,11 @@ StyleCopReport.xml
 #Folders
 obj/*
 bin/*
+bin/
+obj/
+*bin/*
+*obj/*
+
 
 # Files built by Visual Studio
 *_i.c
