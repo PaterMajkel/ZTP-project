@@ -15,6 +15,12 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         this.points = points
 
     }
+    setStrategy(shootType) {
+        this.shootType = shootType
+    }
+    shoot(){
+        this.shootType.shoot()
+    }
     static preload(scene)
     {
         scene.load.spritesheet('player_sprite', './Assets/spaceinvaders.png',{frameWidth: 52, frameHeight: 36})
