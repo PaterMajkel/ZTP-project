@@ -1,3 +1,4 @@
+import Bullet from './Bullet.js';
 export class Player extends Phaser.Physics.Arcade.Sprite{
     constructor(data)
     {
@@ -24,6 +25,12 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         this.setVelocity(100, 200);
         this.setBounce(0.2);
         this.setCollideWorldBounds(true);
+        fireButton=game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+        this.bullets=this.physics.add.group({
+            maxSize:20,
+            classType:Bullet,
+            runChildUpdate: true
+        });
     }
     update(cursors)
     {
@@ -41,6 +48,10 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
             {
                 this.setVelocityX(0);
             }
+            if(fireButton.isDown)
+            {
+                fireBullet();
+            }
         }
         else
         {
@@ -52,4 +63,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
     {
         this.points=this.points+value
     }
+}
+function fireBullet()
+{
+    const bullet
 }
