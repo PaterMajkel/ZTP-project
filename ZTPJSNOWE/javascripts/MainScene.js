@@ -21,6 +21,7 @@ export class MainScene extends Phaser.Scene {
   {
     console.log("XD");
     this.player.movmentSpeed=80
+    this.player.damage(5)
     timedEvent
   }
   create() {
