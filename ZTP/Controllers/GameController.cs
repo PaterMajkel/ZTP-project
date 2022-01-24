@@ -22,20 +22,20 @@ namespace ZTP.Controllers
             _logger = logger;
             _gameFcd = gameFcd;
         }
-        [HttpGet("GetLevel")]
-       public LevelDTO GetLevel(int levelId)
-        {
-            return _gameFcd.GetLevel(levelId);
-        }
         [HttpGet("GetAllLevels")]
         public ICollection<LevelDTO> GetAllLevels()
         {
             return _gameFcd.GetAllLevels();
         }
-        [HttpPost("PostScore")]
-        public void PostScore(ScoreBoardDTO scoreBoardDTO, int levelId)
+        [HttpGet("GetAllScores")]
+        public ICollection<ScoreBoardDTO> GetAllScores()
         {
-           _gameFcd.PostScore(scoreBoardDTO, levelId);
+            return _gameFcd.GetAllScores();
+        }
+        [HttpPost("PostScore")]
+        public void PostScore(ScoreBoardDTO scoreBoardDTO)
+        {
+            _gameFcd.PostScore(scoreBoardDTO);
         }
     }
 }

@@ -11,6 +11,5 @@ namespace ZTP.Common.DTO
         public int ScoreBoardId { get; set; }
         public int Score { get; set; }
         public string Name { get; set; }
-        public int LevelId { get; set; }
     }
 }

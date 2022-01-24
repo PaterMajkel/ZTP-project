@@ -61,9 +61,9 @@ namespace ZTP
 
             app.UseRouting();
 
-            app.UseCors("MyCorsPolicy");
+            //app.UseCors("MyCorsPolicy");
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

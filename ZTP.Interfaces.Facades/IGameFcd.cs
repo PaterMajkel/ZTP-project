@@ -7,10 +7,10 @@ namespace ZTP.Interfaces.Facades
 {
     public interface IGameFcd
     {
-        LevelDTO GetLevel(int levelId);
 
         ICollection<LevelDTO> GetAllLevels();
+        ICollection<ScoreBoardDTO> GetAllScores();
 
-        void PostScore(ScoreBoardDTO scoreBoardDTO, int levelId);
+        void PostScore(ScoreBoardDTO scoreBoardDTO);
     }
 }

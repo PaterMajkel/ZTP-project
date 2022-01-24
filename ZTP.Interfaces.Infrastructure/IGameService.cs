@@ -7,13 +7,12 @@ namespace ZTP.Interfaces.Infrastructure
 {
     public interface IGameService
     {
-        ICollection<ScoreBoardDTO> GetScoreBoardsOfLevel(int levelId);
 
-        LevelDTO GetLevel(int levelId);
+        ICollection<LevelDTO> GetAllLevels();
 
-        ICollection<LevelDTO> getAllLevels();
+        ICollection<ScoreBoardDTO> GetAllScores();
 
-        void PostScore(ScoreBoardDTO scoreBoardDTO, int levelId);
+        void PostScore(ScoreBoardDTO scoreBoardDTO);
 
     }
 }

@@ -23,23 +23,14 @@ namespace ZTP.EntityFramework.Services
             IMapper mapper)
             => (_context, _mapper) = (context, mapper);
 
-        public ICollection<ScoreBoardDTO> GetScoreBoardsOfLevel(int levelId)
+
+        public ICollection<ScoreBoardDTO> GetAllScores()
         {
-            var level = _context.Levels.Where(p => p.LvlNumber == levelId).Include(p=> p.ScoreBoards).First();
-            if (level == null)
-                return null;
-            return _mapper.Map<ICollection<ScoreBoardDTO>>(level.ScoreBoards);
+            var scores = _context.Levels.ToList();
+            return _mapper.Map<ICollection<ScoreBoardDTO>>(scores);
         }
 
-        public LevelDTO GetLevel(int levelId)
-        {
-            var level = _context.Levels.Where(p => p.LvlNumber == levelId).First();
-            if (level == null)
-                return null;
-            return _mapper.Map<LevelDTO>(level);
-        }
-
-        public ICollection<LevelDTO> getAllLevels()
+        public ICollection<LevelDTO> GetAllLevels()
         {
             var levels = _context.Levels.ToList();
             if (levels == null)
@@ -47,9 +38,9 @@ namespace ZTP.EntityFramework.Services
             return _mapper.Map<ICollection<LevelDTO>>(levels);
         }
 
-        public void PostScore(ScoreBoardDTO scoreBoardDTO, int levelId)
+        public void PostScore(ScoreBoardDTO scoreBoardDTO)
         {
-            _context.ScoreBoards.Add(new Models.ScoreBoard { LevelNumber = levelId, Name=scoreBoardDTO.Name, Score=scoreBoardDTO.Score });
+            _context.ScoreBoards.Add(new Models.ScoreBoard { Name = scoreBoardDTO.Name, Score = scoreBoardDTO.Score });
             _context.SaveChanges();
         }
 

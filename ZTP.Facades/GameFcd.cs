@@ -20,31 +20,22 @@ namespace ZTP.Facades
 
         public ICollection<LevelDTO> GetAllLevels()
         {
-            var levelDTOs = _gameService.getAllLevels();
-            if (levelDTOs == null)
-                return null;
-            foreach(var levelDTO in levelDTOs)
-            {
-                levelDTO.ScoreBoardDTOs = _gameService.GetScoreBoardsOfLevel(levelDTO.LvlNumber);
-            }
+            var levels = _gameService.GetAllLevels();
 
-            return levelDTOs;
+            return levels;
         }
 
-        public LevelDTO GetLevel(int levelId)
+        public ICollection<ScoreBoardDTO> GetAllScores()
         {
-            var levelDTO = _gameService.GetLevel(levelId);
-            if (levelDTO == null)
-                return null;
+            var scores = _gameService.GetAllScores();
 
-            levelDTO.ScoreBoardDTOs = _gameService.GetScoreBoardsOfLevel(levelDTO.LvlNumber);
-
-            return levelDTO;
+            return scores;
         }
 
-        public void PostScore(ScoreBoardDTO scoreBoardDTO, int levelId)
+
+        public void PostScore(ScoreBoardDTO scoreBoardDTO)
         {
-            _gameService.PostScore(scoreBoardDTO, levelId);
+            _gameService.PostScore(scoreBoardDTO);
         }
     }
 }

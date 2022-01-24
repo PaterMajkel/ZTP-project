@@ -10,9 +10,8 @@ namespace ZTP.EntityFramework.Models
     public class Level
     {
         [Key]
-        public int LvlNumber { get; set; }
+        public int Id { get; set; }
         public string LvlAssets { get; set; }
         public string LvlEnemies { get; set; }
-        public ICollection<ScoreBoard> ScoreBoards { get; set; }
     }
 }

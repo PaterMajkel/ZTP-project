@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Enums\" />
-    <Folder Include="Strings\" />
+    <Compile Remove="Enums\**" />
+    <Compile Remove="Strings\**" />
+    <EmbeddedResource Remove="Enums\**" />
+    <EmbeddedResource Remove="Strings\**" />
+    <None Remove="Enums\**" />
+    <None Remove="Strings\**" />
   </ItemGroup>
 
 </Project>

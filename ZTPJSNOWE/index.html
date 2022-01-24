@@ -1,0 +1,42 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>JS PROJECT</title>
+    <link href="index.css" rel="stylesheet"/>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <script type="module" src='./javascripts/index.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="phaser-game" class="game">
+
+    </div>
+    <div id="score">
+        <p>{{amount}}</p>
+        <p>{{scores}}</p>
+    <button  @click="send">send</button>
+    </div>
+    <script>
+        var score = new Vue({
+            el:'#score',
+            data:{
+                amount:'',
+                scores:''
+            },
+            mounted() {
+                fetch("https://localhost:5001/API/GameController/GetAllLevels")
+                    .then(response => response.json())
+                    .then(data=> this.scores=data)
+                if(localStorage.score) this.amount = localStorage.score;
+            },
+            methods: {
+            send() {
+                console.log(this.amount)
+                this.amount = localStorage.getItem("score")
+            }
+}
+        })
+    </script>
+</body>
+</html>
