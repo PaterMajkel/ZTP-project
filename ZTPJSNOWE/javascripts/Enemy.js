@@ -1,29 +1,37 @@
-var EnemyFactory=function(){
-    this.createEnemy=function(enemyType){
-        var alien;
+class Enemy{
+    //  constructor(type){
+    //      this.type=type
+    //  }
 
-        if(enemyType==="fireEnemy"){
-            alien=new FireEnemy();
-        }
-        else if(enemyType==="poisonEnemy")
-        {
-            alien=new PoisonEnemy();
-        }
-        else if(enemyType===normalEnemy){
-            alien=new NormalEnemy();
-        }
+    createEnemy();
 
+}
+class FireEnemy extends Enemy{
+    
+    createEnemy(scene){
+        scene.load.spritesheet('f_alien_sprite', './Assets/spaceinvaders.png',{frameWidth: 52, frameHeight: 36})
+        return new FireEnemy;
     }
-    alien.enemyType=enemyType;
-    return alien;
 }
-var FireEnemy=function(){
-    
+class NormalEnemy extends Enemy{
+    createEnemy(scene){
+        scene.load.spritesheet('n_alien_sprite', './Assets/spaceinvades.png',{frameWidth: 52, frameHeight: 36})
+        return new NormalEnemy;
+    }
+}
+class PoisonEnemy extends Enemy{
+    createEnemy(scene){
+        scene.load.spritesheet('p_alien_sprite', './Assets/sinvaders.png',{frameWidth: 52, frameHeight: 36})
+        return new PoisonEnemy;
+    }
 }
 
-var PoisonEnemy=function() {
-    
+function getNormalEnemy(){
+    return NormalEnemy.createEnemy();
 }
-var NormalEnemy=function(){
-
+function getFireEnemy(){
+    return FireEnemy.createEnemy();
+}
+function getPoisonEnemy(){
+    return PoisonEnemy.createEnemy();
 }
