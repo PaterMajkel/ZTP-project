@@ -82,4 +82,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
             console.log("I AM DEAD");
         }
     }
+    healing(amount)
+    {
+        console.log("MEDIC!!!")
+        this.hp.increasHealth(amount);
+    }
 }

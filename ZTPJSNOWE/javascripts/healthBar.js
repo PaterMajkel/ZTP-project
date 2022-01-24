@@ -21,6 +21,15 @@ export class HealthBar extends Phaser.Physics.Arcade.Sprite
         this.draw();
         return(this.value===0);
     }
+    increasHealth(amount)
+    {
+        this.value+=amount
+        if(this.value>100)
+        {
+            this.value=100;
+        }
+        this.draw();
+    }
     draw()
     {
         this.bar.clear()

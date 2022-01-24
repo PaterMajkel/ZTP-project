@@ -107,9 +107,12 @@ export class MainScene extends Phaser.Scene {
     this.physics.add.collider(this.player, this.wall);
     this.wallColider = this.physics.add.collider(this.player, this.wall);
     // console.log(this.player.this.collision)
+    this.point_text=this.add.text(550,40,`Points: ${this.player.points}`)
+    this.point_text.setDepth(99)
   }
   update() {
     this.player.update(this.cursors);
+    this.point_text.setText(`Points: ${this.player.points}`)
     if(this.testCursors.four.isDown)//testowanie zatrucia
     {
         this.poisonedState()
