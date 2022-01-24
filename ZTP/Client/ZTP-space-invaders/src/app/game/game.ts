@@ -1,19 +1,18 @@
-import 'phaser';
-import { MainScene } from './scenes/main';
-
-const config: Phaser.Types.Core.GameConfig = {
+import "phaser";
+import { MainScene } from "./scene/main";
+var config={
     title: "Space Invaders",
+    backgroundColor: 'rgb(47,52,55)',
     type: Phaser.AUTO,
-    backgroundColor: 'rgb(47, 52, 55)',
-    width: 800,
-    height: 600,
-    scene: MainScene,
-    physics: {
-        default: "arcade"
+    width: 512,
+    height: 512,
+    physics:{
+        default: 'arcade',
     },
-    parent: "SpaceInvaders"
+    scene:[
+        MainScene,
+    ]
 };
-
 class SpaceInvadersGame extends Phaser.Game {
     constructor(config: Phaser.Types.Core.GameConfig) {
         super(config)
