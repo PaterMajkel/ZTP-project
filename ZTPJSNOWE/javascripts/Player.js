@@ -1,4 +1,5 @@
 var flipFlop;
+import { HealthBar } from "./healthBar.js";
 export class Player extends Phaser.Physics.Arcade.Sprite{
 
     constructor(data)
@@ -7,14 +8,17 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
             scene,
             x,
             y,
-            points
+            points,
+            movmentSpeed
         }=data
         super(scene, x,y,'player_sprite')
         scene.physics.add.existing(this)
         this.scene.add.existing(this, true) 
-        this.body.setSize(this.body.width-10,this.body.height-2)
+        this.body.setSize(this.body.width,this.body.height-30)
         this.setDepth(99);
         this.points = points
+        this.movmentSpeed=movmentSpeed
+        this.hp=new HealthBar(this.scene,30,40)
 
     }
     setStrategy(shootType) {
@@ -25,7 +29,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
     }
     static preload(scene)
     {
-        scene.load.spritesheet('player_sprite', './Assets/spaceinvaders.png',{frameWidth: 52, frameHeight: 36})
+        scene.load.spritesheet('player_sprite', './Assets/ship.png',{frameWidth: 52, frameHeight: 36})
     }
     create()
     {
@@ -39,11 +43,11 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         {
             if(cursors.left.isDown)
             {
-                this.setVelocityX(-160);
+                this.setVelocityX(-this.movmentSpeed);
             }
             else if(cursors.right.isDown)
             {
-                this.setVelocityX(160);
+                this.setVelocityX(this.movmentSpeed);
             }
             else
             {
@@ -69,5 +73,18 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
     addPoints(value)
     {
         this.points=this.points+value
+    }
+    damage(amount)
+    {
+        console.log("OUCH");
+        if(this.hp.decreaseHealth(amount))
+        {
+            console.log("I AM DEAD");
+        }
+    }
+    healing(amount)
+    {
+        console.log("MEDIC!!!")
+        this.hp.increasHealth(amount);
     }
 }

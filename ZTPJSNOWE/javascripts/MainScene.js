@@ -9,8 +9,39 @@ export class MainScene extends Phaser.Scene {
   preload() {
     Player.preload(this);
     this.load.image("tiles", "./Assets/terrain.png");
+    this.load.image('alienFire','./Assets/alienFire.png');
+    this.load.image('alienNormal','./Assets/alienNormal.png');
+    this.load.image('alienPoison','./Assets/alienPoison.png');
     this.load.image("bullet", "./Assets/bullet1.png");
     this.load.tilemapTiledJSON("map", "./Assets/map1.json");
+  }
+  normalState()
+  {
+      console.log("I AM NORMAL");
+    this.player.movmentSpeed=160
+  }
+  poisonedState()
+  {
+    console.log("Poison");
+    timedEvent=this.time.delayedCall(3000,this.normalState,[],this);
+    this.player.movmentSpeed=80
+    this.player.damage(5)
+    timedEvent
+  }
+  inFlameState()
+  {
+    console.log("OH NO I AM IN FLAME")
+    for(var i=1;i<=3;i++)
+    {
+        firetime[i]=this.time.delayedCall(2000*i,this.playerDamageInFire,[],this);
+        firetime[i];
+    }
+
+
+  }
+  playerDamageInFire()///idk why it needs to be in different function to work with time 
+  {
+      this.player.damage(4)
   }
   create() {
     const map = this.make.tilemap({
@@ -40,7 +71,29 @@ export class MainScene extends Phaser.Scene {
       x: 344,
       y: 600,
       points: 0,
+      movmentSpeed: 160
     });
+    this.alienFire=this.physics.add.group({
+        allowGravity:false,
+    })
+    map.getObjectLayer('alienFire').objects.forEach((alienFire)=>{
+        const alienSprite=this.alienFire.create(alienFire.x,alienFire.y,'alienFire').setOrigin();
+        alienSprite.body.setSize(alienFire.width,alienFire.height).setOffset(0,0);
+    })
+    this.alienNormal=this.physics.add.group({
+        allowGravity:false,
+    })
+    map.getObjectLayer('alienNormal').objects.forEach((alienNormal)=>{
+        const alienNormalSprite=this.alienNormal.create(alienNormal.x,alienNormal.y,'alienNormal').setOrigin();
+        alienNormalSprite.body.setSize(alienNormal.width,alienNormal.height).setOffset(0,0);
+    })
+    this.alienPoison=this.physics.add.group({
+        allowGravity:false,
+    })
+    map.getObjectLayer('alienPoison').objects.forEach((alienPoison)=>{
+        const alienPoisonSprite=this.alienPoison.create(alienPoison.x,alienPoison.y,'alienPoison').setOrigin();
+        alienPoisonSprite.body.setSize(alienPoison.width,alienPoison.height).setOffset(0,0);
+    })
     this.player.setStrategy(this.normalBulletStrat);
 
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -55,10 +108,20 @@ export class MainScene extends Phaser.Scene {
     this.physics.add.collider(this.player, this.wall);
     this.wallColider = this.physics.add.collider(this.player, this.wall);
     // console.log(this.player.this.collision)
+    this.point_text=this.add.text(550,40,`Points: ${this.player.points}`)
+    this.point_text.setDepth(99)
   }
   update() {
     this.player.update(this.cursors);
-
+    this.point_text.setText(`Points: ${this.player.points}`)
+    if(this.testCursors.four.isDown)//testowanie zatrucia
+    {
+        this.poisonedState()
+    }
+    if(this.testCursors.five.isDown && flipFlop)//testowanie podpalenia
+    {
+        this.inFlameState()
+    }
     if (this.testCursors.one.isDown && flipFlop) {
         this.player.setStrategy(this.normalBulletStrat);
         flipFlop = false;
@@ -101,3 +164,6 @@ export class MainScene extends Phaser.Scene {
   }
 }
 var flipFlop;
+var timedEvent;
+var firetime=[];
+
