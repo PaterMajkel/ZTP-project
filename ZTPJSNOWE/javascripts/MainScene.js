@@ -12,6 +12,17 @@ export class MainScene extends Phaser.Scene {
     this.load.image("bullet", "./Assets/bullet1.png");
     this.load.tilemapTiledJSON("map", "./Assets/map1.json");
   }
+  normalState()
+  {
+    this.player.movmentSpeed=160
+    timedEvent=this.time.delayedCall(3000,this.normalState,[],this);
+  }
+  poisonedState()
+  {
+    console.log("XD");
+    this.player.movmentSpeed=80
+    timedEvent
+  }
   create() {
     const map = this.make.tilemap({
       key: "map",
@@ -39,6 +50,7 @@ export class MainScene extends Phaser.Scene {
       x: 344,
       y: 600,
       points: 0,
+      movmentSpeed: 160
     });
     this.player.setStrategy(this.normalBulletStrat);
 
@@ -53,11 +65,15 @@ export class MainScene extends Phaser.Scene {
     });
     this.physics.add.collider(this.player, this.wall);
     this.wallColider = this.physics.add.collider(this.player, this.wall);
+    timedEvent=this.time.delayedCall(3000,this.normalState,[],this);
     // console.log(this.player.this.collision)
   }
   update() {
     this.player.update(this.cursors);
-
+    if(this.testCursors.four.isDown)
+    {
+        this.poisonedState()
+    }
     if (this.testCursors.one.isDown && flipFlop) {
         this.player.setStrategy(this.normalBulletStrat);
         flipFlop = false;
@@ -96,3 +112,5 @@ export class MainScene extends Phaser.Scene {
   }
 }
 var flipFlop;
+var timedEvent;
+

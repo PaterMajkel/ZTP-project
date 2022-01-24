@@ -7,7 +7,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
             scene,
             x,
             y,
-            points
+            points,
+            movmentSpeed
         }=data
         super(scene, x,y,'player_sprite')
         scene.physics.add.existing(this)
@@ -15,6 +16,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         this.body.setSize(this.body.width-10,this.body.height-2)
         this.setDepth(99);
         this.points = points
+        this.movmentSpeed=movmentSpeed
 
     }
     setStrategy(shootType) {
@@ -39,11 +41,11 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         {
             if(cursors.left.isDown)
             {
-                this.setVelocityX(-160);
+                this.setVelocityX(-this.movmentSpeed);
             }
             else if(cursors.right.isDown)
             {
-                this.setVelocityX(160);
+                this.setVelocityX(this.movmentSpeed);
             }
             else
             {
