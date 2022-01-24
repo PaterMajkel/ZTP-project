@@ -9,6 +9,9 @@ export class MainScene extends Phaser.Scene {
   preload() {
     Player.preload(this);
     this.load.image("tiles", "./Assets/terrain.png");
+    this.load.image('alienFire','./Assets/alienFire.png');
+    this.load.image('alienNormal','./Assets/alienNormal.png');
+    this.load.image('alienPoison','./Assets/alienPoison.png');
     this.load.image("bullet", "./Assets/bullet1.png");
     this.load.tilemapTiledJSON("map", "./Assets/map1.json");
   }
@@ -69,6 +72,27 @@ export class MainScene extends Phaser.Scene {
       points: 0,
       movmentSpeed: 160
     });
+    this.alienFire=this.physics.add.group({
+        allowGravity:false,
+    })
+    map.getObjectLayer('alienFire').objects.forEach((alienFire)=>{
+        const alienSprite=this.alienFire.create(alienFire.x,alienFire.y,'alienFire').setOrigin();
+        alienSprite.body.setSize(alienFire.width,alienFire.height).setOffset(0,0);
+    })
+    this.alienNormal=this.physics.add.group({
+        allowGravity:false,
+    })
+    map.getObjectLayer('alienNormal').objects.forEach((alienNormal)=>{
+        const alienNormalSprite=this.alienNormal.create(alienNormal.x,alienNormal.y,'alienNormal').setOrigin();
+        alienNormalSprite.body.setSize(alienNormal.width,alienNormal.height).setOffset(0,0);
+    })
+    this.alienPoison=this.physics.add.group({
+        allowGravity:false,
+    })
+    map.getObjectLayer('alienPoison').objects.forEach((alienPoison)=>{
+        const alienPoisonSprite=this.alienPoison.create(alienPoison.x,alienPoison.y,'alienPoison').setOrigin();
+        alienPoisonSprite.body.setSize(alienPoison.width,alienPoison.height).setOffset(0,0);
+    })
     this.player.setStrategy(this.normalBulletStrat);
 
     this.cursors = this.input.keyboard.createCursorKeys();
