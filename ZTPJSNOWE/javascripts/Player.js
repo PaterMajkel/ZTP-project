@@ -76,6 +76,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
     }
     damage(amount)
     {
+        console.log("OUCH");
         if(this.hp.decreaseHealth(amount))
         {
             console.log("I AM DEAD");

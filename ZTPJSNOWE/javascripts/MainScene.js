@@ -14,15 +14,31 @@ export class MainScene extends Phaser.Scene {
   }
   normalState()
   {
+      console.log("I AM NORMAL");
     this.player.movmentSpeed=160
-    timedEvent=this.time.delayedCall(3000,this.normalState,[],this);
   }
   poisonedState()
   {
-    console.log("XD");
+    console.log("Poison");
+    timedEvent=this.time.delayedCall(3000,this.normalState,[],this);
     this.player.movmentSpeed=80
     this.player.damage(5)
     timedEvent
+  }
+  inFlameState()
+  {
+    console.log("OH NO I AM IN FLAME")
+    for(var i=1;i<=3;i++)
+    {
+        firetime[i]=this.time.delayedCall(2000*i,this.playerDamageInFire,[],this);
+        firetime[i];
+    }
+
+
+  }
+  playerDamageInFire()///idk why it needs to be in different function to work with time 
+  {
+      this.player.damage(4)
   }
   create() {
     const map = this.make.tilemap({
@@ -66,14 +82,17 @@ export class MainScene extends Phaser.Scene {
     });
     this.physics.add.collider(this.player, this.wall);
     this.wallColider = this.physics.add.collider(this.player, this.wall);
-    timedEvent=this.time.delayedCall(3000,this.normalState,[],this);
     // console.log(this.player.this.collision)
   }
   update() {
     this.player.update(this.cursors);
-    if(this.testCursors.four.isDown)
+    if(this.testCursors.four.isDown)//testowanie zatrucia
     {
         this.poisonedState()
+    }
+    if(this.testCursors.five.isDown && flipFlop)//testowanie podpalenia
+    {
+        this.inFlameState()
     }
     if (this.testCursors.one.isDown && flipFlop) {
         this.player.setStrategy(this.normalBulletStrat);
@@ -114,4 +133,5 @@ export class MainScene extends Phaser.Scene {
 }
 var flipFlop;
 var timedEvent;
+var firetime=[];
 
