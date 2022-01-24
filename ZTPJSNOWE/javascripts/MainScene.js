@@ -1,8 +1,7 @@
-import {BigAssBullet, preBigAssBullet} from "./BigAssBullet.js";
-import {Bullet, preBullet} from "./Bullet.js";
+import {BigAssBullet, preBigAssBullet} from "./bullets/BigAssBullet.js";
+import {Bullet, preBullet} from "./bullets/Bullet.js";
 import { Player } from "./Player.js";
-import { preDoubleBullet } from "./doubleBullet.js";
-
+import { preDoubleBullet } from "./bullets/doubleBullet.js";
 export class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
@@ -52,6 +51,7 @@ export class MainScene extends Phaser.Scene {
       tileHeight: 16,
     });
     const tileset = map.addTilesetImage("terrain", "tiles");
+    this.physics.world.on('worldbounds', this.onWorldbounds, this);
     this.background = map.createLayer("background", tileset);
     this.wall = map.createLayer("wall", tileset);
     this.wall.setCollisionByExclusion(-1, true);
@@ -159,6 +159,10 @@ export class MainScene extends Phaser.Scene {
       default:
         break;
     }
+  }
+  onWorldbounds(element){
+      if(this.bullets.contains(element.gameObject) || this.bigBullets.contains(element.gameObject))
+        element.gameObject.deactivate()
   }
 }
 var flipFlop;
