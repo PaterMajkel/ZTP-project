@@ -1,6 +1,7 @@
 
 import { MainScene } from './MainScene.js';
 var config = {
+  parent: "phaser-game",
   type: Phaser.AUTO,
   backgroundColor: 'rgb(47, 52, 55)',
   width: 688,

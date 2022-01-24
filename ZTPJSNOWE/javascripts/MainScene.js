@@ -2,6 +2,7 @@ import {BigAssBullet, preBigAssBullet} from "./BigAssBullet.js";
 import {Bullet, preBullet} from "./Bullet.js";
 import { Player } from "./Player.js";
 import { preDoubleBullet } from "./doubleBullet.js";
+
 export class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
@@ -44,6 +45,7 @@ export class MainScene extends Phaser.Scene {
       this.player.damage(4)
   }
   create() {
+    localStorage.setItem("score", "0")
     const map = this.make.tilemap({
       key: "map",
       tileWidth: 16,
@@ -130,6 +132,7 @@ export class MainScene extends Phaser.Scene {
     } else if (this.testCursors.three.isDown)
      {
         this.player.setStrategy(this.doubleBulletStrat);
+        localStorage.setItem("score", (+localStorage.getItem("score")+1).toString())
         flipFlop = false;
      }
      else if (this.testCursors.three.isUp && !flipFlop) {
