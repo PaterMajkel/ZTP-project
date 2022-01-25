@@ -56,6 +56,7 @@ export class MainScene extends Phaser.Scene {
     this.background = map.createLayer("background", tileset);
     this.wall = map.createLayer("wall", tileset);
     this.wall.setCollisionByExclusion(-1, true);
+    this.alienNumber=45;
     this.bullets = this.physics.add.group({
       classType: Bullet,
       runChildUpdate: true,
@@ -78,6 +79,7 @@ export class MainScene extends Phaser.Scene {
       y: 600,
       points: 0,
       movmentSpeed: 160,
+      level: 0
     });
     this.physics.add.collider(
       this.alienBullets,
@@ -178,15 +180,19 @@ export class MainScene extends Phaser.Scene {
       bullet.deactivate();
     }
   }
-  onBulletHitEnemy(alien, bullet) {
-    if (alien.active && bullet.active) {
-      bullet.deactivate();
+  onBulletHitEnemy(alien, bullet){  
+    if(alien.active && bullet.active) {
+      //if(!(bullet instanceof BigAssBullet))
+        bullet.deactivate();
       alien.deactivate();
-      this.player.addPoints(10);
-      localStorage.setItem(
-        "score",
-        (+localStorage.getItem("score") + 10).toString()
-      );
+      this.alienNumber--;
+      console.log(this.alienNumber) 
+      if(this.alienNumber==0)
+      {
+          this.scene.start('MainScene')
+      }
+      this.player.addPoints(10)
+      localStorage.setItem("score", (+localStorage.getItem("score")+10).toString())
     }
     bullet.setVelocityY(-300);
   }

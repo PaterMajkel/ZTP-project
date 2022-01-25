@@ -9,7 +9,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
             x,
             y,
             points,
-            movmentSpeed
+            movmentSpeed,
+            level
         }=data
         super(scene, x,y,'player_sprite')
         scene.physics.add.existing(this)
@@ -19,6 +20,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         this.points = points
         this.movmentSpeed=movmentSpeed
         this.hp=new HealthBar(this.scene,30,40)
+        this.level=level;
 
     }
     setStrategy(shootType) {
