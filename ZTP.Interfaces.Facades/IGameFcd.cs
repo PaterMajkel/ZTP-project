@@ -11,6 +11,6 @@ namespace ZTP.Interfaces.Facades
         ICollection<LevelDTO> GetAllLevels();
         ICollection<ScoreBoardDTO> GetAllScores();
 
-        void PostScore(ScoreBoardDTO scoreBoardDTO);
+        ScoreBoardDTO PostScore(ScoreBoardDTO scoreBoardDTO);
     }
 }

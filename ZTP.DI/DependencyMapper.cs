@@ -20,7 +20,7 @@ namespace ZTP.DI
         public static void AddDependencies(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
             serviceCollection.AddDbContext<EFDbContext>(options =>
-                options.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\ZTP project\\ZTP - project\\ZTP.EntityFramework\\Data\\ZTP - back.mdf\";Integrated Security=True;")
+                options.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\student debil sem 5\\ZTP project\\ZTP-project\\ZTP.EntityFramework\\Data\\ZTP-back.mdf\";Integrated Security=True;")
                 );
             //configuration.GetConnectionString("ConnectionStrings: ZTPDB"
 

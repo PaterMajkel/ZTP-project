@@ -33,9 +33,9 @@ namespace ZTP.Facades
         }
 
 
-        public void PostScore(ScoreBoardDTO scoreBoardDTO)
+        public ScoreBoardDTO PostScore(ScoreBoardDTO scoreBoardDTO)
         {
-            _gameService.PostScore(scoreBoardDTO);
+            return _gameService.PostScore(scoreBoardDTO);
         }
     }
 }

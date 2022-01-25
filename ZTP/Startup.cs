@@ -32,13 +32,12 @@ namespace ZTP
                 options.AddPolicy(name: "MyCorsPolicy",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200")
+                        builder.WithOrigins("http://localhost:5500")
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                         .AllowCredentials();
                     });
             });
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -61,7 +60,7 @@ namespace ZTP
 
             app.UseRouting();
 
-            //app.UseCors("MyCorsPolicy");
+            app.UseCors("MyCorsPolicy");
 
             //app.UseAuthorization();
 

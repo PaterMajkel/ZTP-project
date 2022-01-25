@@ -26,7 +26,7 @@ namespace ZTP.EntityFramework.Services
 
         public ICollection<ScoreBoardDTO> GetAllScores()
         {
-            var scores = _context.Levels.ToList();
+            var scores = _context.ScoreBoards.ToList();
             return _mapper.Map<ICollection<ScoreBoardDTO>>(scores);
         }
 
@@ -38,10 +38,11 @@ namespace ZTP.EntityFramework.Services
             return _mapper.Map<ICollection<LevelDTO>>(levels);
         }
 
-        public void PostScore(ScoreBoardDTO scoreBoardDTO)
+        public ScoreBoardDTO PostScore(ScoreBoardDTO scoreBoardDTO)
         {
             _context.ScoreBoards.Add(new Models.ScoreBoard { Name = scoreBoardDTO.Name, Score = scoreBoardDTO.Score });
             _context.SaveChanges();
+            return _mapper.Map<ScoreBoardDTO>(_context.ScoreBoards.Where(p=>p.Name==scoreBoardDTO.Name && p.Score==scoreBoardDTO.Score).FirstOrDefault());
         }
 
     }

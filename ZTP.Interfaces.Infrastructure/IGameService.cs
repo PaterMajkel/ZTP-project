@@ -12,7 +12,7 @@ namespace ZTP.Interfaces.Infrastructure
 
         ICollection<ScoreBoardDTO> GetAllScores();
 
-        void PostScore(ScoreBoardDTO scoreBoardDTO);
+        ScoreBoardDTO PostScore(ScoreBoardDTO scoreBoardDTO);
 
     }
 }

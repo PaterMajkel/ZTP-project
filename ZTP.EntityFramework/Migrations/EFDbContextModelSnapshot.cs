@@ -48,9 +48,6 @@ namespace ZTP.EntityFramework.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ScoreBoardId"), 1L, 1);
 
-                    b.Property<int>("LevelNumber")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -59,20 +56,7 @@ namespace ZTP.EntityFramework.Migrations
 
                     b.HasKey("ScoreBoardId");
 
-                    b.HasIndex("LevelNumber");
-
                     b.ToTable("ScoreBoards");
-                });
-
-            modelBuilder.Entity("ZTP.EntityFramework.Models.ScoreBoard", b =>
-                {
-                    b.HasOne("ZTP.EntityFramework.Models.Level", "Level")
-                        .WithMany()
-                        .HasForeignKey("LevelNumber")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Level");
                 });
 #pragma warning restore 612, 618
         }

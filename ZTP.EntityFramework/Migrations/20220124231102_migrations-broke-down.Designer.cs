@@ -11,8 +11,8 @@ using ZTP.EntityFramework;
 namespace ZTP.EntityFramework.Migrations
 {
     [DbContext(typeof(EFDbContext))]
-    [Migration("20220106154005_Initial")]
-    partial class Initial
+    [Migration("20220124231102_migrations-broke-down")]
+    partial class migrationsbrokedown
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,11 +25,11 @@ namespace ZTP.EntityFramework.Migrations
 
             modelBuilder.Entity("ZTP.EntityFramework.Models.Level", b =>
                 {
-                    b.Property<int>("LvlNumber")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LvlNumber"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("LvlAssets")
                         .HasColumnType("nvarchar(max)");
@@ -37,7 +37,7 @@ namespace ZTP.EntityFramework.Migrations
                     b.Property<string>("LvlEnemies")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("LvlNumber");
+                    b.HasKey("Id");
 
                     b.ToTable("Levels");
                 });
@@ -50,9 +50,6 @@ namespace ZTP.EntityFramework.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ScoreBoardId"), 1L, 1);
 
-                    b.Property<int>("LevelNumber")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -61,25 +58,7 @@ namespace ZTP.EntityFramework.Migrations
 
                     b.HasKey("ScoreBoardId");
 
-                    b.HasIndex("LevelNumber");
-
                     b.ToTable("ScoreBoards");
-                });
-
-            modelBuilder.Entity("ZTP.EntityFramework.Models.ScoreBoard", b =>
-                {
-                    b.HasOne("ZTP.EntityFramework.Models.Level", "Level")
-                        .WithMany("ScoreBoards")
-                        .HasForeignKey("LevelNumber")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Level");
-                });
-
-            modelBuilder.Entity("ZTP.EntityFramework.Models.Level", b =>
-                {
-                    b.Navigation("ScoreBoards");
                 });
 #pragma warning restore 612, 618
         }

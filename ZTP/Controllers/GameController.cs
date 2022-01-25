@@ -33,9 +33,9 @@ namespace ZTP.Controllers
             return _gameFcd.GetAllScores();
         }
         [HttpPost("PostScore")]
-        public void PostScore(ScoreBoardDTO scoreBoardDTO)
+        public ScoreBoardDTO PostScore(ScoreBoardDTO scoreBoardDTO)
         {
-            _gameFcd.PostScore(scoreBoardDTO);
+            return _gameFcd.PostScore(scoreBoardDTO);
         }
     }
 }

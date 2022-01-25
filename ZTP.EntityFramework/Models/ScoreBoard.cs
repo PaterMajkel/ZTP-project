@@ -14,8 +14,5 @@ namespace ZTP.EntityFramework.Models
         public int ScoreBoardId { get; set; }
         public int Score { get; set; }
         public string Name { get; set; }
-        [ForeignKey("Level")]
-        public int LevelNumber { get; set; }
-        public Level Level { get; set; }
     }
 }
