@@ -24,10 +24,15 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         this.movmentSpeed=movmentSpeed
         this.hp=new HealthBar(this.scene,30,40)
         this.level=level;
+        this.body.immovable = true;
         Player.exists=true
         Player.instance = this
-            return this
+        return this
 
+    }
+    deleteInstance(){
+        Player.instance = null
+        Player.exists=false
     }
     setStrategy(shootType) {
         this.shootType = shootType

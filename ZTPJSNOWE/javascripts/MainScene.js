@@ -97,8 +97,8 @@ export class MainScene extends Phaser.Scene {
     this.enemyManager.addColider(this.player, this.onEnemyHitPlayer, this);
     this.enemyManager.addColider(this.wall, this.onEnemyHitWall, this);
     this.alienContainer = this.enemyManager.getAlienContainer();
-    this.player.body.immovable = true;
-    this.alienContainer.forEach((p) => (p.body.immovable = true));
+    
+    //this.alienContainer.forEach((p) => (p.body.immovable = true));
     this.player.setStrategy(this.normalBulletStrat);
 
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -191,7 +191,8 @@ export class MainScene extends Phaser.Scene {
       this.alienNumber--;
       if(this.alienNumber==0)
       {
-          this.scene.start('MainScene')
+        this.scene.start('MainScene')
+        this.player.deleteInstance()
       }
       this.player.addPoints(10)
       localStorage.setItem("score", (+localStorage.getItem("score")+10).toString())
