@@ -2,6 +2,8 @@ import {BigAssBullet, preBigAssBullet} from "./bullets/BigAssBullet.js";
 import {Bullet, preBullet} from "./bullets/Bullet.js";
 import { Player } from "./Player.js";
 import { preDoubleBullet } from "./bullets/doubleBullet.js";
+import { Factory, FireAlien } from "./Factory.js";
+//import { Factory } from "./Factory.js";
 export class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
@@ -9,7 +11,7 @@ export class MainScene extends Phaser.Scene {
   preload() {
     Player.preload(this);
     this.load.image("tiles", "./Assets/terrain.png");
-    this.load.image('alienFire','./Assets/alienFire.png');
+    //this.load.image('alienFire','./Assets/alienFire.png');
     this.load.image('alienNormal','./Assets/alienNormal.png');
     this.load.image('alienPoison','./Assets/alienPoison.png');
     this.load.image("bullet", "./Assets/bullet1.png");
@@ -55,6 +57,10 @@ export class MainScene extends Phaser.Scene {
     this.background = map.createLayer("background", tileset);
     this.wall = map.createLayer("wall", tileset);
     this.wall.setCollisionByExclusion(-1, true);
+    this.alienFire=this.physics.add.group({
+      classType:FireAlien,
+      runChildUpdate:true,
+    })
     this.bullets = this.physics.add.group({
       classType: Bullet,
       runChildUpdate: true,
@@ -78,8 +84,12 @@ export class MainScene extends Phaser.Scene {
         allowGravity:false,
     })
     map.getObjectLayer('alienFire').objects.forEach((alienFire)=>{
-        const alienSprite=this.alienFire.create(alienFire.x,alienFire.y,'alienFire').setOrigin();
-        alienSprite.body.setSize(alienFire.width,alienFire.height).setOffset(0,0);
+    
+      //  const alienSprite=this.alienFire.create(alienFire.x,alienFire.y,'alienFire').setOrigin();
+        //alienSprite.body.setSize(alienFire.width,alienFire.height).setOffset(0,0);
+       // let factory=new Factory();
+       // const alien=factory.createEnemy("fireAlien")
+
     })
     this.alienNormal=this.physics.add.group({
         allowGravity:false,
