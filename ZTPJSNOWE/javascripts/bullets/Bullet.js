@@ -25,7 +25,6 @@ export class Bullet extends Phaser.Physics.Arcade.Sprite {
       this.rotation = orientation
       if(color!=0)
         this.setTexture(color);
-      console.log(this)
     }
   
     deactivate() {

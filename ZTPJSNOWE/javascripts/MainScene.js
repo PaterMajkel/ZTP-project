@@ -83,6 +83,7 @@ export class MainScene extends Phaser.Scene {
       movmentSpeed: 160,
       level: localStorage.level
     });
+
     this.physics.add.collider(
       this.alienBullets,
       this.player,
@@ -188,7 +189,6 @@ export class MainScene extends Phaser.Scene {
         bullet.deactivate();
       alien.deactivate();
       this.alienNumber--;
-      console.log(this.alienNumber) 
       if(this.alienNumber==0)
       {
           this.scene.start('MainScene')

@@ -4,6 +4,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
 
     constructor(data)
     {
+        if(Player.exists){
+            return Player.instance
+        }
         let{
             scene,
             x,
@@ -21,6 +24,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         this.movmentSpeed=movmentSpeed
         this.hp=new HealthBar(this.scene,30,40)
         this.level=level;
+        Player.exists=true
+        Player.instance = this
+            return this
 
     }
     setStrategy(shootType) {
