@@ -5,6 +5,6 @@ export class preDoubleBullet{
 
       shoot(x,y){
         this.type.get().shoot(x-20,y)
-        this.type.get().shoot(x+20,y)
+        this.type.get().shoot(x+20,y-3)
       }
 }

@@ -78,25 +78,15 @@ export class MainScene extends Phaser.Scene {
     this.alienFire=this.physics.add.group({
         allowGravity:false,
     })
-    /*map.getObjectLayer('alienFire').objects.forEach((alienFire)=>{
-        const alienSprite=this.alienFire.create(alienFire.x,alienFire.y,'alienFire').setOrigin();
-        alienSprite.body.setSize(alienFire.width,alienFire.height).setOffset(0,0);
-    })
-    this.alienNormal=this.physics.add.group({
-        allowGravity:false,
-    })
-    map.getObjectLayer('alienNormal').objects.forEach((alienNormal)=>{
-        const alienNormalSprite=this.alienNormal.create(alienNormal.x,alienNormal.y,'alienNormal').setOrigin();
-        alienNormalSprite.body.setSize(alienNormal.width,alienNormal.height).setOffset(0,0);
-    })
-    this.alienPoison=this.physics.add.group({
-        allowGravity:false,
-    })
-    map.getObjectLayer('alienPoison').objects.forEach((alienPoison)=>{
-        const alienPoisonSprite=this.alienPoison.create(alienPoison.x,alienPoison.y,'alienPoison').setOrigin();
-        alienPoisonSprite.body.setSize(alienPoison.width,alienPoison.height).setOffset(0,0);
-    })*/
+   
     this.enemyManager=new EnemyManager(this)
+    this.enemyManager.addColider(this.bullets,this.onBulletHitEnemy, this)
+    this.enemyManager.addColider(this.bigBullets,this.onBulletHitEnemy, this)
+    this.enemyManager.addColider(this.player,this.onEnemyHitPlayer, this)
+    
+    this.enemyManager.addColider(this.wall ,this.onEnemyHitWall, this)
+    this.alienContainer = this.enemyManager.getAlienContainer()
+    this.alienContainer.forEach(p=>p.body.immovable = true)
     this.player.setStrategy(this.normalBulletStrat);
 
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -134,7 +124,6 @@ export class MainScene extends Phaser.Scene {
     } else if (this.testCursors.three.isDown)
      {
         this.player.setStrategy(this.doubleBulletStrat);
-        localStorage.setItem("score", (+localStorage.getItem("score")+1).toString())
         flipFlop = false;
      }
      else if (this.testCursors.three.isUp && !flipFlop) {
@@ -164,7 +153,25 @@ export class MainScene extends Phaser.Scene {
   }
   onWorldbounds(element){
       if(this.bullets.contains(element.gameObject) || this.bigBullets.contains(element.gameObject))
-        element.gameObject.deactivate()
+        element.gameObject.deactivate(true)
+  }
+  onEnemyHitWall(alien){
+    this.alienContainer.forEach(p=>p.colidedWithWall())
+    if(alien.y>=600)
+       this.player.damage(100)
+  }
+  onEnemyHitPlayer(){
+    //this.player.damage(100)
+  }
+  onBulletHitEnemy(alien, bullet){
+    if(alien.active && bullet.active) {
+      //if(!(bullet instanceof BigAssBullet))
+        bullet.deactivate();
+      alien.deactivate();
+      this.player.addPoints(10)
+      localStorage.setItem("score", (+localStorage.getItem("score")+10).toString())
+    }
+    bullet.setVelocityY(-300);
   }
 }
 var flipFlop;

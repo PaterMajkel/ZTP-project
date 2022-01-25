@@ -3,21 +3,22 @@ function deactivateAlien(alien) {
     alien.deactivate();
 }
 export class EnemyManager {
-    constructor(scean,) {
-        this.scean = scean
+    constructor(scene, multiplier = 1) {
+        this.multiplier=multiplier
+        this.scene = scene
         this.maxHight = 650;
         this.alienVelocity1 = 50;
-        this.aliensFires = scean.physics.add.group({
+        this.aliensFires = scene.physics.add.group({
             maxSize: 30,
             classType: AlienFire,
             runChildUpdate: true
         })
-        this.aliensNormals = scean.physics.add.group({
+        this.aliensNormals = scene.physics.add.group({
             maxSize: 30,
             classType: AlienNormal,
             runChildUpdate: true
         })
-        this.aliensPoisons = scean.physics.add.group({
+        this.aliensPoisons = scene.physics.add.group({
             maxSize: 30,
             classType: AlienPoison,
             runChildUpdate: true
@@ -29,18 +30,12 @@ export class EnemyManager {
         scene.physics.add.collider(this.aliensNormals, other, eventHandler, null, scene);
         scene.physics.add.collider(this.aliensPoisons, other, eventHandler, null, scene);
     }
+    getAlienContainer(){
+        return this.alienList
+    }
     init() {
-        //this.makeAlienRow(0, this.aliensFires);
-        //this.makeAlienRow(1, this.aliensFires);
-        //this.makeAlienRow(2, this.aliensNormals);
-        //this.makeAlienRow(3, this.aliensNormals);
-        //this.makeAlienRow(4, this.aliensPoisons);
-        //this.makeAlienRow(5, this.aliensPoisons);
-
-        //this.aliensVelocity = this.aliensVelocity1 + (5 * (level - 1));
-        //this.aliens1.setVelocityX(this.aliensVelocity);
-        //this.aliens2.setVelocityX(this.aliensVelocity);
-        //this.aliens3.setVelocityX(this.aliensVelocity);
+        this.alienList=[]
+        
         for(var row=0;row<5;row++)
         {
             for(var column=0;column<9;column++)
@@ -50,15 +45,18 @@ export class EnemyManager {
                 let rand=Math.floor(Math.random()*(3-1+1)+1)
                 if(rand==1)
                 {
-                    this.aliensFires.get().activate(x,y);
+                    this.alienList.push(this.aliensFires.get());
+                    this.alienList.at(-1).activate(x,y,this.multiplier)
                 }
                 else if(rand==2)
                 {
-                    this.aliensNormals.get().activate(x,y);
+                    this.alienList.push(this.aliensNormals.get());
+                    this.alienList.at(-1).activate(x,y, this.multiplier)
                 }
                 else if(rand==3)
                 {
-                    this.aliensPoisons.get().activate(x,y);
+                    this.alienList.push(this.aliensPoisons.get());
+                    this.alienList.at(-1).activate(x,y, this.multiplier)
                 }
             }
         }

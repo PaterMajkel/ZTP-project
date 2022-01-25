@@ -6,6 +6,7 @@ var config = {
   backgroundColor: 'rgb(47, 52, 55)',
   width: 688,
   height: 688,
+  fps: 60,
   physics: {
       default: 'arcade',
       arcade: {

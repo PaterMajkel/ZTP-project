@@ -69,8 +69,8 @@ var PoisonAlien = function (aliens) {
     this.attckType = "poison"
 }*/
 class Alien extends Phaser.Physics.Arcade.Sprite {
-    constructor(scean, alienType) {
-        super(scean, 0, 0, alienType);
+    constructor(scene, alienType) {
+        super(scene, 0, 0, alienType);
         this.alienType = alienType;
     }
     preload() {
@@ -78,28 +78,35 @@ class Alien extends Phaser.Physics.Arcade.Sprite {
         this.load.image('alienNormal', './Assets/alienNormal.png');
         this.load.image('alienPoison', './Assets/alienPoison.png');
     }
-    activate(x, y) {
+    activate(x, y, multiplier=1) {
         this.setCollideWorldBounds(true);
         this.body.onWorldBounds = true;
         this.enableBody(true, x, y, true, true);
+        this.setVelocityX(10*multiplier)
+        this.velocity=this.body.velocity.x
     }
     deactivate() {
         this.disableBody(true, true);
     }
+    colidedWithWall(){
+        this.y+=10
+        this.setVelocityX(this.velocity*-1.05)
+        this.velocity=this.velocity*-1.05
+    }
 }
 export class AlienFire extends Alien {
-    constructor(scean) {
-        super(scean, 'alienFire');
+    constructor(scene) {
+        super(scene, 'alienFire');
     }
 }
 export class AlienNormal extends Alien {
-    constructor(scean) {
-        super(scean, 'alienNormal');
+    constructor(scene) {
+        super(scene, 'alienNormal');
     }
 }
 export class AlienPoison extends Alien {
-    constructor(scean) {
-        super(scean, 'alienPoison');
+    constructor(scene) {
+        super(scene, 'alienPoison');
     }
 }
 

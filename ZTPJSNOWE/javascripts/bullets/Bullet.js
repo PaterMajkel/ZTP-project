@@ -15,7 +15,7 @@ export class Bullet extends Phaser.Physics.Arcade.Sprite {
       super(scene, 0, 0, 'bullet');
 
     }
-  
+
     shoot(x, y) {
         this.setScale(3)
       this.setCollideWorldBounds(true);
