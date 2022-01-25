@@ -46,6 +46,8 @@ export class MainScene extends Phaser.Scene {
     this.player.damage(4, this.scene);
   }
   create() {
+    if(!localStorage.score)
+      localStorage.setItem("score", "0")
     const map = this.make.tilemap({
       key: "map",
       tileWidth: 16,
@@ -77,9 +79,9 @@ export class MainScene extends Phaser.Scene {
       scene: this,
       x: 344,
       y: 600,
-      points: 0,
+      points: +localStorage.getItem("score"),
       movmentSpeed: 160,
-      level: 0
+      level: localStorage.level
     });
     this.physics.add.collider(
       this.alienBullets,
