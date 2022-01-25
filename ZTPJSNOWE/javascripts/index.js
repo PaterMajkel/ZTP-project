@@ -1,5 +1,6 @@
 
 import { MainScene } from './MainScene.js';
+import { GameOver } from './GameOver.js';
 var config = {
   parent: "phaser-game",
   type: Phaser.AUTO,
@@ -15,7 +16,8 @@ var config = {
     }
   },
   scene:[
-    MainScene
+    MainScene,
+    GameOver
   ]
 };
 
