@@ -74,12 +74,16 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
     {
         this.points=this.points+value
     }
-    damage(amount)
+    damage(amount,scene)
     {
+        this.newScene=scene
+        this.playernew=this
         console.log("OUCH");
         if(this.hp.decreaseHealth(amount))
         {
-            console.log("I AM DEAD");
+           this.newScene.start('level1',{
+                points: this.playernew.points
+               })
         }
     }
     healing(amount)

@@ -26,7 +26,7 @@ export class MainScene extends Phaser.Scene {
     console.log("Poison");
     timedEvent=this.time.delayedCall(3000,this.normalState,[],this);
     this.player.movmentSpeed=80
-    this.player.damage(5)
+    this.player.damage(5,this.scene)
     timedEvent
   }
   inFlameState()
@@ -42,7 +42,7 @@ export class MainScene extends Phaser.Scene {
   }
   playerDamageInFire()///idk why it needs to be in different function to work with time 
   {
-      this.player.damage(4)
+      this.player.damage(4,this.scene)
   }
   create() {
     localStorage.setItem("score", "0")
