@@ -2,6 +2,7 @@ import {BigAssBullet, preBigAssBullet} from "./bullets/BigAssBullet.js";
 import {Bullet, preBullet} from "./bullets/Bullet.js";
 import { Player } from "./Player.js";
 import { preDoubleBullet } from "./bullets/doubleBullet.js";
+import { EnemyManager } from "./EnemyManager.js";
 export class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
@@ -77,7 +78,7 @@ export class MainScene extends Phaser.Scene {
     this.alienFire=this.physics.add.group({
         allowGravity:false,
     })
-    map.getObjectLayer('alienFire').objects.forEach((alienFire)=>{
+    /*map.getObjectLayer('alienFire').objects.forEach((alienFire)=>{
         const alienSprite=this.alienFire.create(alienFire.x,alienFire.y,'alienFire').setOrigin();
         alienSprite.body.setSize(alienFire.width,alienFire.height).setOffset(0,0);
     })
@@ -94,7 +95,8 @@ export class MainScene extends Phaser.Scene {
     map.getObjectLayer('alienPoison').objects.forEach((alienPoison)=>{
         const alienPoisonSprite=this.alienPoison.create(alienPoison.x,alienPoison.y,'alienPoison').setOrigin();
         alienPoisonSprite.body.setSize(alienPoison.width,alienPoison.height).setOffset(0,0);
-    })
+    })*/
+    this.enemyManager=new EnemyManager(this)
     this.player.setStrategy(this.normalBulletStrat);
 
     this.cursors = this.input.keyboard.createCursorKeys();
