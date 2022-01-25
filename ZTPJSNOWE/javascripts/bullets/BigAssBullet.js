@@ -20,7 +20,7 @@ export class BigAssBullet extends Phaser.Physics.Arcade.Sprite {
       this.setCollideWorldBounds(true);
       this.body.onWorldBounds = true;
       this.enableBody(true, x, y, true, true);
-      this.setVelocityY(-300);
+      this.setVelocityY(-150);
     }
   
     deactivate(isWall=false) {

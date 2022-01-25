@@ -16,12 +16,16 @@ export class Bullet extends Phaser.Physics.Arcade.Sprite {
 
     }
 
-    shoot(x, y) {
+    shoot(x, y, speed=-300, orientation = 0, color = 0 ) {
         this.setScale(3)
       this.setCollideWorldBounds(true);
       this.body.onWorldBounds = true;
       this.enableBody(true, x, y, true, true);
-      this.setVelocityY(-300);
+      this.setVelocityY(speed);
+      this.rotation = orientation
+      if(color!=0)
+        this.setTexture(color);
+      console.log(this)
     }
   
     deactivate() {
