@@ -15,7 +15,7 @@ export class StartGame extends Phaser.Scene{
             this.scene.start('MainScene')
         })
         localStorage.score=0;
-        localStorage.level=1;
+        localStorage.level=0;
     }
     update()
     {

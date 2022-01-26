@@ -3,7 +3,7 @@ function deactivateAlien(alien) {
     alien.deactivate();
 }
 export class EnemyManager {
-    constructor(scene, multiplier = 1) {
+    constructor(scene, multiplier) {
         this.multiplier=multiplier
         this.scene = scene
         this.maxHight = 650;

@@ -48,6 +48,8 @@ export class MainScene extends Phaser.Scene {
   create() {
     if(!localStorage.score)
       localStorage.setItem("score", "0")
+    if(!localStorage.level)
+      localStorage.setItem("level", "1")
     const map = this.make.tilemap({
       key: "map",
       tileWidth: 16,
@@ -81,7 +83,7 @@ export class MainScene extends Phaser.Scene {
       y: 600,
       points: +localStorage.getItem("score"),
       movmentSpeed: 160,
-      level: localStorage.level
+      level: +localStorage.getItem("level")
     });
 
     this.physics.add.collider(
@@ -91,7 +93,7 @@ export class MainScene extends Phaser.Scene {
       null,
       this
     );
-    this.enemyManager = new EnemyManager(this);
+    this.enemyManager = new EnemyManager(this, this.level);
     this.enemyManager.addColider(this.bullets, this.onBulletHitEnemy, this);
     this.enemyManager.addColider(this.bigBullets, this.onBulletHitEnemy, this);
     this.enemyManager.addColider(this.player, this.onEnemyHitPlayer, this);
@@ -191,6 +193,9 @@ export class MainScene extends Phaser.Scene {
       this.alienNumber--;
       if(this.alienNumber==0)
       {
+        console.log(this.level)
+        this.level=this.level*1.05
+        localStorage.level=this.level
         this.scene.start('MainScene')
         this.player.deleteInstance()
       }
