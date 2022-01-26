@@ -28,6 +28,7 @@ class Alien extends Phaser.Physics.Arcade.Sprite {
 export class AlienFire extends Alien {
     constructor(scene) {
         super(scene, 'alienFire');
+        this.modifier=localStorage.level
     }
     shoot(){
         if(!this.active)
@@ -58,7 +59,7 @@ export class AlienPoison extends Alien {
     shoot(){
         if(!this.active)
             return
-        if(Math.random()>0.1)
+        if(Math.random()>0.1*this.modifier)
             return
         let bullet = this.scene.alienBullets.get()
         bullet.shoot(this.x, this.y, 250, Math.PI, 'bulletGreen' )

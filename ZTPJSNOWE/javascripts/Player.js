@@ -23,7 +23,6 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         this.points = points
         this.movmentSpeed=movmentSpeed
         this.hp=new HealthBar(this.scene,30,40)
-        this.level=level;
         this.body.immovable = true;
         Player.exists=true
         Player.instance = this
@@ -94,9 +93,10 @@ export class Player extends Phaser.Physics.Arcade.Sprite{
         console.log("OUCH");
         if(this.hp.decreaseHealth(amount))
         {
-           this.newScene.start('level1',{
-                points: this.playernew.points
-               })
+            this.newScene.start('level1',{
+                points: this.playernew.points,
+                player: this.playernew
+            })
         }
     }
     healing(amount)

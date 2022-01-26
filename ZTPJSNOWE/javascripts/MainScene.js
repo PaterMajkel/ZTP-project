@@ -3,6 +3,8 @@ import { Bullet, preBullet } from "./bullets/Bullet.js";
 import { Player } from "./Player.js";
 import { preDoubleBullet } from "./bullets/doubleBullet.js";
 import { EnemyManager } from "./EnemyManager.js";
+import {AlienIterator} from "./AlienIterator.js"
+
 export class MainScene extends Phaser.Scene {
   constructor() {
     super("MainScene");
@@ -50,6 +52,9 @@ export class MainScene extends Phaser.Scene {
       localStorage.setItem("score", "0")
     if(!localStorage.level)
       localStorage.setItem("level", "1")
+    else
+      localStorage.setItem("level", (+localStorage.getItem("level")*1.1).toString())
+
     const map = this.make.tilemap({
       key: "map",
       tileWidth: 16,
@@ -93,14 +98,20 @@ export class MainScene extends Phaser.Scene {
       null,
       this
     );
-    this.enemyManager = new EnemyManager(this, this.level);
+    this.enemyManager = new EnemyManager(this, localStorage.getItem("level"));
     this.enemyManager.addColider(this.bullets, this.onBulletHitEnemy, this);
     this.enemyManager.addColider(this.bigBullets, this.onBulletHitEnemy, this);
     this.enemyManager.addColider(this.player, this.onEnemyHitPlayer, this);
     this.enemyManager.addColider(this.wall, this.onEnemyHitWall, this);
     this.alienContainer = this.enemyManager.getAlienContainer();
-    
-    //this.alienContainer.forEach((p) => (p.body.immovable = true));
+    this.iterator = new AlienIterator(this.alienContainer)
+    console.log(this.iterator)
+    this.iterator.reset()
+    while(this.iterator.hasNextElement()){
+      let item = this.iterator.next()
+      console.log(item)
+      item.body.immovable = true
+    }
     this.player.setStrategy(this.normalBulletStrat);
 
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -163,7 +174,12 @@ export class MainScene extends Phaser.Scene {
       element.gameObject.deactivate(true);
   }
   onEnemyHitWall(alien) {
-    this.alienContainer.forEach((p) => p.colidedWithWall());
+
+    this.iterator.reset()
+
+    while(this.iterator.hasNextElement()){
+      this.iterator.next().colidedWithWall()
+    }
     if (alien.y >= 570) this.player.damage(100, this.scene);
   }
   onEnemyHitPlayer() {
@@ -193,11 +209,8 @@ export class MainScene extends Phaser.Scene {
       this.alienNumber--;
       if(this.alienNumber==0)
       {
-        console.log(this.level)
-        this.level=this.level*1.05
-        localStorage.level=this.level
-        this.scene.start('MainScene')
         this.player.deleteInstance()
+        this.scene.start('MainScene')
       }
       this.player.addPoints(10)
       localStorage.setItem("score", (+localStorage.getItem("score")+10).toString())

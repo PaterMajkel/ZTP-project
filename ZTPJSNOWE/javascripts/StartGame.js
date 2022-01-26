@@ -14,8 +14,8 @@ export class StartGame extends Phaser.Scene{
         this.reset_text.on('pointerup',()=>{
             this.scene.start('MainScene')
         })
-        localStorage.score=0;
-        localStorage.level=0;
+        localStorage.setItem("score",0);
+        localStorage.setItem("level",1);
     }
     update()
     {
