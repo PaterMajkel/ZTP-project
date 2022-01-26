@@ -1,7 +1,4 @@
 import { AlienFire, AlienNormal, AlienPoison } from "./Enemy.js";
-function deactivateAlien(alien) {
-    alien.deactivate();
-}
 export class EnemyManager {
     constructor(scene, multiplier) {
         this.multiplier=multiplier

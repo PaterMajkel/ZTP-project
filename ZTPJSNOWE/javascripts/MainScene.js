@@ -3,7 +3,7 @@ import { Bullet, preBullet } from "./bullets/Bullet.js";
 import { Player } from "./Player.js";
 import { preDoubleBullet } from "./bullets/doubleBullet.js";
 import { EnemyManager } from "./EnemyManager.js";
-import {AlienIterator} from "./AlienIterator.js"
+import { AlienIterator } from "./AlienIterator.js";
 
 export class MainScene extends Phaser.Scene {
   constructor() {
@@ -48,12 +48,13 @@ export class MainScene extends Phaser.Scene {
     this.player.damage(4, this.scene);
   }
   create() {
-    if(!localStorage.score)
-      localStorage.setItem("score", "0")
-    if(!localStorage.level)
-      localStorage.setItem("level", "1")
+    if (!localStorage.score) localStorage.setItem("score", "0");
+    if (!localStorage.level) localStorage.setItem("level", "1");
     else
-      localStorage.setItem("level", (+localStorage.getItem("level")*1.1).toString())
+      localStorage.setItem(
+        "level",
+        (+localStorage.getItem("level") * 1.1).toString()
+      );
 
     const map = this.make.tilemap({
       key: "map",
@@ -65,7 +66,7 @@ export class MainScene extends Phaser.Scene {
     this.background = map.createLayer("background", tileset);
     this.wall = map.createLayer("wall", tileset);
     this.wall.setCollisionByExclusion(-1, true);
-    this.alienNumber=45;
+    this.alienNumber = 45;
     this.bullets = this.physics.add.group({
       classType: Bullet,
       runChildUpdate: true,
@@ -88,7 +89,7 @@ export class MainScene extends Phaser.Scene {
       y: 600,
       points: +localStorage.getItem("score"),
       movmentSpeed: 160,
-      level: +localStorage.getItem("level")
+      level: +localStorage.getItem("level"),
     });
 
     this.physics.add.collider(
@@ -104,13 +105,13 @@ export class MainScene extends Phaser.Scene {
     this.enemyManager.addColider(this.player, this.onEnemyHitPlayer, this);
     this.enemyManager.addColider(this.wall, this.onEnemyHitWall, this);
     this.alienContainer = this.enemyManager.getAlienContainer();
-    this.iterator = new AlienIterator(this.alienContainer)
-    console.log(this.iterator)
-    this.iterator.reset()
-    while(this.iterator.hasNextElement()){
-      let item = this.iterator.next()
-      console.log(item)
-      item.body.immovable = true
+    this.iterator = new AlienIterator(this.alienContainer);
+    console.log(this.iterator);
+    this.iterator.reset();
+    while (this.iterator.hasNextElement()) {
+      let item = this.iterator.next();
+      console.log(item);
+      item.body.immovable = true;
     }
     this.player.setStrategy(this.normalBulletStrat);
 
@@ -174,13 +175,14 @@ export class MainScene extends Phaser.Scene {
       element.gameObject.deactivate(true);
   }
   onEnemyHitWall(alien) {
+    if (alien.active) {
+      this.iterator.reset();
 
-    this.iterator.reset()
-
-    while(this.iterator.hasNextElement()){
-      this.iterator.next().colidedWithWall()
+      while (this.iterator.hasNextElement()) {
+        this.iterator.next().colidedWithWall();
+      }
+      if (alien.y >= 570) this.player.damage(100, this.scene);
     }
-    if (alien.y >= 570) this.player.damage(100, this.scene);
   }
   onEnemyHitPlayer() {
     this.player.damage(100, this.scene);
@@ -201,19 +203,21 @@ export class MainScene extends Phaser.Scene {
       bullet.deactivate();
     }
   }
-  onBulletHitEnemy(alien, bullet){  
-    if(alien.active && bullet.active) {
+  onBulletHitEnemy(alien, bullet) {
+    if (alien.active && bullet.active) {
       //if(!(bullet instanceof BigAssBullet))
-        bullet.deactivate();
+      bullet.deactivate();
       alien.deactivate();
       this.alienNumber--;
-      if(this.alienNumber==0)
-      {
-        this.player.deleteInstance()
-        this.scene.start('MainScene')
+      if (this.alienNumber == 0) {
+        this.player.deleteInstance();
+        this.scene.start("MainScene");
       }
-      this.player.addPoints(10)
-      localStorage.setItem("score", (+localStorage.getItem("score")+10).toString())
+      this.player.addPoints(10);
+      localStorage.setItem(
+        "score",
+        (+localStorage.getItem("score") + 10).toString()
+      );
     }
     bullet.setVelocityY(-300);
   }

@@ -33,7 +33,7 @@ export class AlienFire extends Alien {
     shoot(){
         if(!this.active)
             return
-        if(Math.random()>0.15)
+        if(Math.random()>0.1)
             return
         let bullet = this.scene.alienBullets.get()
         bullet.shoot(this.x, this.y, 250, Math.PI )
@@ -46,7 +46,7 @@ export class AlienNormal extends Alien {
     shoot(){
         if(!this.active)
             return
-        if(Math.random()>0.1)
+        if(Math.random()>0.05)
             return
         let bullet = this.scene.alienBullets.get()
         bullet.shoot(this.x, this.y, 250, Math.PI, 'bulletBlue' )
@@ -59,7 +59,7 @@ export class AlienPoison extends Alien {
     shoot(){
         if(!this.active)
             return
-        if(Math.random()>0.1*this.modifier)
+        if(Math.random()>0.05)
             return
         let bullet = this.scene.alienBullets.get()
         bullet.shoot(this.x, this.y, 250, Math.PI, 'bulletGreen' )
